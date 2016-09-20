@@ -85,11 +85,14 @@ public class MastermindUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         // TODO add your handling code here:
-        GFrame.repaint();
-        //GFrame.setBackground(Color.blue);
+        for(int i=0;i<100;i++){
+        Graphics g = GFrame.getGraphics();
+        g.setColor(Color.blue);
+        g.fillOval(100, i*2, 10, 10);
+        }
     }//GEN-LAST:event_StartButtonMouseClicked
 
     /**
@@ -125,15 +128,6 @@ public class MastermindUI extends javax.swing.JFrame {
                 new MastermindUI().setVisible(true);
             }
         });
-    }
-
-    private class MyPanel extends JPanel {
-
-        public void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            g.setColor(Color.yellow);
-            g.fillOval(0, 0, 50, 50);
-        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
