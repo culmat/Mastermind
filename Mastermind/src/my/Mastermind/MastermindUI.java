@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package my.Mastermind;
+
 import java.awt.*;
+import java.util.Arrays;
 import javax.swing.*;
 
 /**
@@ -95,17 +97,25 @@ public class MastermindUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         // TODO add your handling code here:
-        Graphics g = GFrame.getGraphics();
-        int s=1; //scale
-        g.drawRect(s*20, s*20, s*300, s*720);
-        for(int v=0; v<4; v++){
-            for(int h=0; h<10; h++){
-                g.drawOval(v*70+s*40, h*70+s*40, s*50, s*50);
+        Graphics2D g = (Graphics2D) GFrame.getGraphics();
+        RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setRenderingHints(hints);
+        int s = 1;                                                              //scale
+        g.drawRect(s * 20, s * 20, s * 300, s * 720);
+        for (int v = 0; v < 4; v++) {
+            for (int h = 0; h < 10; h++) {
+                g.drawOval(v * 70 + s * 40, h * 70 + s * 40, s * 50, s * 50);
             }
         }
+        int cg[][] = new int[4][10];                                            //Player Color Array
+        int cs[] = new int[4];                                                  //Solution Color Array
+        for (int i1 = 0; i1 < 4; i1++) {
+            cs[i1] = 1 + (int) (Math.random() * 6);
+        }
+        System.out.println(Arrays.toString(cs));
     }//GEN-LAST:event_StartButtonMouseClicked
 
     /**
