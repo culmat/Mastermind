@@ -116,6 +116,20 @@ public class MastermindUI extends javax.swing.JFrame {
             cs[i1] = 1 + (int) (Math.random() * 6);
         }
         System.out.println(Arrays.toString(cs));
+        
+        int whitePin[] = new int[10];
+        int blackPin[] = new int[10];
+        
+        for (int i2 = 0; i2 < 10; i2++){
+            for (int i3 = 0; i3 < 4; i3++){
+                if (cg[i3][i2] == cs[i3]){
+                    blackPin[i2]++;
+                    System.out.println(Arrays.toString(blackPin));
+                } //else if(true){
+                    
+               // }
+            }
+        }
     }//GEN-LAST:event_StartButtonMouseClicked
 
     /**
@@ -150,7 +164,7 @@ public class MastermindUI extends javax.swing.JFrame {
             public void run() {
                 new MastermindUI().setVisible(true);
             }
-        });
+        });        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
