@@ -120,14 +120,27 @@ public class MastermindUI extends javax.swing.JFrame {
         int whitePin[] = new int[10];
         int blackPin[] = new int[10];
         
+        for (int t1 = 0; t1 < 10; t1++){
+            for (int t2 = 0; t2 < 4; t2++){
+                cg[t2][t1] = 1 + (int) (Math.random() * 6);
+            }
+        }
+        
+        //System.out.println(Arrays.toString(cg));
+        
+        
         for (int i2 = 0; i2 < 10; i2++){
             for (int i3 = 0; i3 < 4; i3++){
+                for (int i4 = 0; i4 < 4; i4++){
+                    if (cg[i4][i2] == cs[i3]){
+                        whitePin[i2]++;
+                        System.out.println(Arrays.toString(whitePin));
+                    }
+                }
                 if (cg[i3][i2] == cs[i3]){
                     blackPin[i2]++;
                     System.out.println(Arrays.toString(blackPin));
-                } //else if(true){
-                    
-               // }
+                }
             }
         }
     }//GEN-LAST:event_StartButtonMouseClicked
