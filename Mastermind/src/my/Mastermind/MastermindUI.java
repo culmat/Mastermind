@@ -11,13 +11,11 @@ import javax.swing.*;
 
 /**
  *
- * @author Robin
+ * @author Robin Bonny
  */
 public class MastermindUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MastermindUI
-     */
+    
     public MastermindUI() {
         initComponents();
     }
@@ -34,7 +32,7 @@ public class MastermindUI extends javax.swing.JFrame {
         Title = new javax.swing.JLabel();
         GFrame = new javax.swing.JPanel();
         StartButton = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        Button1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,8 +58,14 @@ public class MastermindUI extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("jButton7");
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button1.setText("Red");
+        Button1.setActionCommand("Red");
+        Button1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,7 +80,7 @@ public class MastermindUI extends javax.swing.JFrame {
                         .addComponent(StartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton7)
+                            .addComponent(Button1)
                             .addComponent(GFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -91,13 +95,40 @@ public class MastermindUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(GFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(Button1)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*public void Logic() {
+        Graphics2D g = (Graphics2D) GFrame.getGraphics();
+        g.fillRect(0,0,100,100);
+    }*/
+    
+    public void paint(int x, int y, int ColorInt) {
+        Graphics2D g = (Graphics2D) GFrame.getGraphics();
+        RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setRenderingHints(hints);
+        switch (ColorInt){
+            case 0: g.setColor(Color.red);
+                    break;
+            case 1: g.setColor(Color.green);
+                    break;
+            case 2: g.setColor(Color.blue);
+                    break;
+            case 3: g.setColor(Color.orange);
+                    break;
+            case 4: g.setColor(Color.cyan);
+                    break;
+            case 5: g.setColor(Color.magenta);
+                    break;
+        }
+            
+        g.fillOval(x, y, 50, 50);
+    }
+    
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
@@ -143,7 +174,16 @@ public class MastermindUI extends javax.swing.JFrame {
                 }
             }
         }
+        for (int cd = 0; cd<6; cd++){
+            paint((cd+1)*50,(cd+1)*50,cd);
+        }
+        
     }//GEN-LAST:event_StartButtonMouseClicked
+
+    private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
+        // TODO add your handling code here:
+        //g.drawrect();
+    }//GEN-LAST:event_Button1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,13 +217,13 @@ public class MastermindUI extends javax.swing.JFrame {
             public void run() {
                 new MastermindUI().setVisible(true);
             }
-        });        
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Button1;
     private javax.swing.JPanel GFrame;
     private javax.swing.JButton StartButton;
     private javax.swing.JLabel Title;
-    private javax.swing.JButton jButton7;
     // End of variables declaration//GEN-END:variables
 }
