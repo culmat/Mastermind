@@ -107,7 +107,7 @@ public class MastermindUI extends javax.swing.JFrame {
         g.fillRect(0,0,100,100);
     }*/
     
-    public void paint(int x, int y, int ColorInt) {
+    public void paintCircle(int x, int y, int ColorInt) {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
@@ -126,7 +126,20 @@ public class MastermindUI extends javax.swing.JFrame {
                     break;
         }
             
-        g.fillOval(x, y, 50, 50);
+        g.fillOval(x, y, 50, 50); //to be adjusted
+    }
+    
+    public void paintPins(int x, int y, int ColorBW){
+        Graphics2D g = (Graphics2D) GFrame.getGraphics();
+        RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setRenderingHints(hints);
+        switch (ColorBW){
+            case 0: g.setColor(Color.black);
+                    break;
+            case 1: g.setColor(Color.white);
+                    break;
+        }
+        g.fillOval(x, y, 20, 20); //to be adjusted
     }
     
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
@@ -134,6 +147,7 @@ public class MastermindUI extends javax.swing.JFrame {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
+        g.clearRect(0, 0, 340, 760);
         int s = 1;                                                              //scale
         g.drawRect(s * 20, s * 20, s * 300, s * 720);
         for (int v = 0; v < 4; v++) {
@@ -175,14 +189,14 @@ public class MastermindUI extends javax.swing.JFrame {
             }
         }
         for (int cd = 0; cd<6; cd++){
-            paint((cd+1)*50,(cd+1)*50,cd);
+            paintCircle((cd+1)*50,(cd+1)*50,cd);
         }
         
     }//GEN-LAST:event_StartButtonMouseClicked
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
         // TODO add your handling code here:
-        //g.drawrect();
+        paintCircle(100,150,0);
     }//GEN-LAST:event_Button1ActionPerformed
 
     /**
