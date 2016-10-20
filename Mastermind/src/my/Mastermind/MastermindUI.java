@@ -40,6 +40,7 @@ public class MastermindUI extends javax.swing.JFrame {
         Button6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Java Mastermind by Robin Bonny");
         setResizable(false);
 
         Title.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -212,17 +213,24 @@ public class MastermindUI extends javax.swing.JFrame {
         g.fillOval(x, y, 20, 20); //to be adjusted
     }
     
+    public void getColorXY(){
+        
+    }
+    
+    public void getPinsXY(){
+        
+    }
+    
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
         g.clearRect(0, 0, 340, 760);
-        int s = 1;                                                              //scale
-        g.drawRect(s * 20, s * 20, s * 300, s * 720);
+        g.drawRect(20, 20, 300, 720);
         for (int v = 0; v < 4; v++) {
             for (int h = 0; h < 10; h++) {
-                g.drawOval(v * 70 + s * 40, h * 70 + s * 40, s * 50, s * 50);
+                g.drawOval(v * 70 + 40, h * 70 + 40, 50, 50);
             }
         }
         int cg[][] = new int[4][10];                                            //Player Color Array
@@ -242,7 +250,6 @@ public class MastermindUI extends javax.swing.JFrame {
         }
         
         //System.out.println(Arrays.toString(cg));
-        
         
         for (int i2 = 0; i2 < 10; i2++){
             for (int i3 = 0; i3 < 4; i3++){
@@ -264,32 +271,26 @@ public class MastermindUI extends javax.swing.JFrame {
     }//GEN-LAST:event_StartButtonMouseClicked
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
-        // TODO add your handling code here:
         paintCircle(100,150,0);
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
-        // TODO add your handling code here:
         paintCircle(100,150,1);
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
-        // TODO add your handling code here:
         paintCircle(100,150,2);
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
-        // TODO add your handling code here:
         paintCircle(100,150,3);
     }//GEN-LAST:event_Button4ActionPerformed
 
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
-        // TODO add your handling code here:
         paintCircle(100,150,4);
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
-        // TODO add your handling code here:
         paintCircle(100,150,5);
     }//GEN-LAST:event_Button6ActionPerformed
 
