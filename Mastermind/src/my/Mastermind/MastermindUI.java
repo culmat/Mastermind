@@ -191,7 +191,7 @@ public class MastermindUI extends javax.swing.JFrame {
         for (int cd = 0; cd<6; cd++){
             paintCircle((cd+1)*50,(cd+1)*50,cd);
         }
-        
+        //hello
     }//GEN-LAST:event_StartButtonMouseClicked
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
