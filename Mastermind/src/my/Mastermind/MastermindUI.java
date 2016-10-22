@@ -218,177 +218,243 @@ public class MastermindUI extends javax.swing.JFrame {
         g.fillOval(x, y, 20, 20);
     }
 
-    public void getColorXY(int colorBW) {
+    public void getColorXY(int color) {
         int calcX = -100;
         int calcY = -100;
         switch (countCircles()) {
             case 0:
+                cg[0][0] = color;
                 calcX = 43;
                 calcY = 673;
                 break;
             case 1:
+                cg[1][0] = color;
                 calcX = 113;
                 calcY = 673;
                 break;
             case 2:
+                cg[2][0] = color;
                 calcX = 183;
                 calcY = 673;
                 break;
             case 3:
+                cg[3][0] = color;
                 calcX = 253;
                 calcY = 673;
+                eval(0);
                 break;
             case 4:
+                cg[0][1] = color;
                 calcX = 43;
                 calcY = 603;
                 break;
             case 5:
+                cg[1][1] = color;
                 calcX = 113;
                 calcY = 603;
                 break;
             case 6:
+                cg[2][1] = color;
                 calcX = 183;
                 calcY = 603;
                 break;
             case 7:
+                cg[3][1] = color;
                 calcX = 253;
                 calcY = 603;
+                eval(1);
                 break;
             case 8:
+                cg[0][2] = color;
                 calcX = 43;
                 calcY = 533;
                 break;
             case 9:
+                cg[1][2] = color;
                 calcX = 113;
                 calcY = 533;
                 break;
             case 10:
+                cg[2][2] = color;
                 calcX = 183;
                 calcY = 533;
                 break;
             case 11:
+                cg[3][2] = color;
                 calcX = 253;
                 calcY = 533;
+                eval(2);
                 break;
             case 12:
+                cg[0][3] = color;
                 calcX = 43;
                 calcY = 463;
                 break;
             case 13:
+                cg[1][3] = color;
                 calcX = 113;
                 calcY = 463;
                 break;
             case 14:
+                cg[2][3] = color;
                 calcX = 183;
                 calcY = 463;
                 break;
             case 15:
+                cg[3][3] = color;
                 calcX = 253;
                 calcY = 463;
+                eval(3);
                 break;
             case 16:
+                cg[0][4] = color;
                 calcX = 43;
                 calcY = 393;
                 break;
             case 17:
+                cg[1][4] = color;
                 calcX = 113;
                 calcY = 393;
                 break;
             case 18:
+                cg[2][4] = color;
                 calcX = 183;
                 calcY = 393;
                 break;
             case 19:
+                cg[3][4] = color;
                 calcX = 253;
                 calcY = 393;
+                eval(4);
                 break;
             case 20:
+                cg[0][5] = color;
                 calcX = 43;
                 calcY = 323;
                 break;
             case 21:
+                cg[1][5] = color;
                 calcX = 113;
                 calcY = 323;
                 break;
             case 22:
+                cg[2][5] = color;
                 calcX = 183;
                 calcY = 323;
                 break;
             case 23:
+                cg[3][5] = color;
                 calcX = 253;
                 calcY = 323;
+                eval(5);
                 break;
             case 24:
+                cg[0][6] = color;
                 calcX = 43;
                 calcY = 253;
                 break;
             case 25:
+                cg[1][6] = color;
                 calcX = 113;
                 calcY = 253;
                 break;
             case 26:
+                cg[2][6] = color;
                 calcX = 183;
                 calcY = 253;
                 break;
             case 27:
+                cg[3][6] = color;
                 calcX = 253;
                 calcY = 253;
+                eval(6);
                 break;
             case 28:
+                cg[0][7] = color;
                 calcX = 43;
                 calcY = 183;
                 break;
             case 29:
+                cg[1][7] = color;
                 calcX = 113;
                 calcY = 183;
                 break;
             case 30:
+                cg[2][7] = color;
                 calcX = 183;
                 calcY = 183;
                 break;
             case 31:
+                cg[3][7] = color;
                 calcX = 253;
                 calcY = 183;
+                eval(7);
                 break;
             case 32:
+                cg[0][8] = color;
                 calcX = 43;
                 calcY = 113;
                 break;
             case 33:
+                cg[1][8] = color;
                 calcX = 113;
                 calcY = 113;
                 break;
             case 34:
+                cg[2][8] = color;
                 calcX = 183;
                 calcY = 113;
                 break;
             case 35:
+                cg[3][8] = color;
                 calcX = 253;
                 calcY = 113;
+                eval(8);
                 break;
             case 36:
+                cg[0][9] = color;
                 calcX = 43;
                 calcY = 43;
                 break;
             case 37:
+                cg[1][9] = color;
                 calcX = 113;
                 calcY = 43;
                 break;
             case 38:
+                cg[2][9] = color;
                 calcX = 183;
                 calcY = 43;
                 break;
             case 39:
+                cg[3][9] = color;
                 calcX = 253;
                 calcY = 43;
+                eval(9);
                 break;
-
         }
-        paintCircle(calcX, calcY, colorBW);
+        paintCircle(calcX, calcY, color);
     }
 
     public void getPinsXY() {
 
+    }
+
+    public void eval(int row) {
+        int whitePin[] = new int[10];
+        int blackPin[] = new int[10];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (cg[j][row] == cs[i]) {
+                    whitePin[row]++;
+                }
+            }
+            if (cg[i][row] == cs[i]) {
+                blackPin[row]++;
+            }
+        }
+        System.out.println("black " + Arrays.toString(blackPin));
+        System.out.println("white " + Arrays.toString(whitePin));
     }
 
     int circles = -1;
@@ -398,9 +464,8 @@ public class MastermindUI extends javax.swing.JFrame {
         return circles;
     }
 
-    public void eval() {
-
-    }
+    int cg[][] = new int[4][10];                                            //Player Color Array
+    int cs[] = new int[4];                                                  //Solution Color Array
 
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         // TODO add your handling code here:
@@ -415,23 +480,20 @@ public class MastermindUI extends javax.swing.JFrame {
             }
         }
         g.fillOval(60, 690, 10, 10);
-        int cg[][] = new int[4][10];                                            //Player Color Array
-        int cs[] = new int[4];                                                  //Solution Color Array
-        for (int i1 = 0; i1 < 4; i1++) {
-            cs[i1] = 1 + (int) (Math.random() * 6);
+        for (int i = 0; i < 4; i++) {
+            cs[i] = (int) (Math.random() * 6);
         }
         System.out.println(Arrays.toString(cs));
 
-        int whitePin[] = new int[10];
-        int blackPin[] = new int[10];
-
-        for (int t1 = 0; t1 < 10; t1++) {
+        //int whitePin[] = new int[10];
+        //int blackPin[] = new int[10];
+        /*for (int t1 = 0; t1 < 10; t1++) {
             for (int t2 = 0; t2 < 4; t2++) {
                 cg[t2][t1] = 1 + (int) (Math.random() * 6);
             }
-        }
+        }*/
 
-        for (int i2 = 0; i2 < 10; i2++) {
+ /*for (int i2 = 0; i2 < 10; i2++) {
             for (int i3 = 0; i3 < 4; i3++) {
                 for (int i4 = 0; i4 < 4; i4++) {
                     if (cg[i4][i2] == cs[i3]) {
@@ -444,7 +506,7 @@ public class MastermindUI extends javax.swing.JFrame {
                     System.out.println(Arrays.toString(blackPin));
                 }
             }
-        }
+        }*/
     }//GEN-LAST:event_StartButtonMouseClicked
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
