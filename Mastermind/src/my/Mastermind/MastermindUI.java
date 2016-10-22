@@ -195,9 +195,8 @@ public class MastermindUI extends javax.swing.JFrame {
                     break;
             case 5: g.setColor(Color.magenta);
                     break;
-        }
-            
-        g.fillOval(x, y, 45, 45); //to be adjusted
+        }  
+        g.fillOval(x, y, 45, 45);
     }
     
     public void paintPins(int x, int y, int ColorBW){
@@ -210,7 +209,7 @@ public class MastermindUI extends javax.swing.JFrame {
             case 1: g.setColor(Color.white);
                     break;
         }
-        g.fillOval(x, y, 20, 20); //to be adjusted
+        g.fillOval(x, y, 20, 20);
     }
     
     public void getColorXY(int colorBW){
@@ -380,8 +379,6 @@ public class MastermindUI extends javax.swing.JFrame {
                 cg[t2][t1] = 1 + (int) (Math.random() * 6);
             }
         }
-        
-        //System.out.println(Arrays.toString(cg));
         
         for (int i2 = 0; i2 < 10; i2++){
             for (int i3 = 0; i3 < 4; i3++){
