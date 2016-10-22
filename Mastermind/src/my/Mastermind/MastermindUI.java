@@ -49,7 +49,7 @@ public class MastermindUI extends javax.swing.JFrame {
         GFrame.setLayout(GFrameLayout);
         GFrameLayout.setHorizontalGroup(
             GFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         GFrameLayout.setVerticalGroup(
             GFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,8 +136,8 @@ public class MastermindUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(StartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(GFrame, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -207,15 +207,16 @@ public class MastermindUI extends javax.swing.JFrame {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
+        g.setColor(Color.black);
         switch (ColorBW) {
             case 0:
-                g.setColor(Color.black);
+                g.fillOval(x, y, 20, 20);
                 break;
             case 1:
-                g.setColor(Color.white);
+                g.drawOval(x, y, 20, 20);
                 break;
         }
-        g.fillOval(x, y, 20, 20);
+        //g.fillOval(x, y, 20, 20);
     }
 
     public void getColorXY(int color) {
@@ -437,7 +438,19 @@ public class MastermindUI extends javax.swing.JFrame {
     }
 
     public void getPinsXY(int row) {
-        
+        int calcX = 350;
+        int calcY = -100;
+        calcY = 695 - row * 70;
+        int endB = 0;
+        int endW = 0;
+        endB = blackPin[row];
+        endW = whitePin[row];
+        for (int b = 0; b < endB; b++) {
+            paintPins(calcX + b * 25, calcY - 25, 0);
+        }
+        for (int w = 0; w < endW; w++) {
+            paintPins(calcX + w * 25, calcY + 5, 1);
+        }
     }
 
     int whitePin[] = new int[10];
@@ -476,7 +489,7 @@ public class MastermindUI extends javax.swing.JFrame {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
-        g.clearRect(0, 0, 340, 760);
+        g.clearRect(0, 0, 500, 760);
         g.drawRect(20, 20, 300, 720);
         for (int v = 0; v < 4; v++) {
             for (int h = 0; h < 10; h++) {
