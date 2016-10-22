@@ -15,7 +15,6 @@ import javax.swing.*;
  */
 public class MastermindUI extends javax.swing.JFrame {
 
-    
     public MastermindUI() {
         initComponents();
     }
@@ -177,180 +176,232 @@ public class MastermindUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
     public void paintCircle(int x, int y, int ColorInt) {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
-        switch (ColorInt){
-            case 0: g.setColor(Color.red);
-                    break;
-            case 1: g.setColor(Color.green);
-                    break;
-            case 2: g.setColor(Color.blue);
-                    break;
-            case 3: g.setColor(Color.orange);
-                    break;
-            case 4: g.setColor(Color.cyan);
-                    break;
-            case 5: g.setColor(Color.magenta);
-                    break;
-        }  
+        switch (ColorInt) {
+            case 0:
+                g.setColor(Color.red);
+                break;
+            case 1:
+                g.setColor(Color.green);
+                break;
+            case 2:
+                g.setColor(Color.blue);
+                break;
+            case 3:
+                g.setColor(Color.orange);
+                break;
+            case 4:
+                g.setColor(Color.cyan);
+                break;
+            case 5:
+                g.setColor(Color.magenta);
+                break;
+        }
         g.fillOval(x, y, 45, 45);
     }
-    
-    public void paintPins(int x, int y, int ColorBW){
+
+    public void paintPins(int x, int y, int ColorBW) {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
-        switch (ColorBW){
-            case 0: g.setColor(Color.black);
-                    break;
-            case 1: g.setColor(Color.white);
-                    break;
+        switch (ColorBW) {
+            case 0:
+                g.setColor(Color.black);
+                break;
+            case 1:
+                g.setColor(Color.white);
+                break;
         }
         g.fillOval(x, y, 20, 20);
     }
-    
-    public void getColorXY(int colorBW){
-        int calcX=-100;
-        int calcY=-100;
-        switch (countCircles()){
-            case 0: calcX=43;
-                    calcY=673;
-                    break;
-            case 1: calcX=113;
-                    calcY=673;
-                    break;
-            case 2: calcX=183;
-                    calcY=673;
-                    break;
-            case 3: calcX=253;
-                    calcY=673;
-                    break;
-            case 4: calcX=43;
-                    calcY=603;
-                    break;
-            case 5: calcX=113;
-                    calcY=603;
-                    break;
-            case 6: calcX=183;
-                    calcY=603;
-                    break;
-            case 7: calcX=253;
-                    calcY=603;
-                    break;
-            case 8: calcX=43;
-                    calcY=533;
-                    break;
-            case 9: calcX=113;
-                    calcY=533;
-                    break;
-            case 10:calcX=183;
-                    calcY=533;
-                    break;
-            case 11:calcX=253;
-                    calcY=533;
-                    break;
-            case 12:calcX=43;
-                    calcY=463;
-                    break;
-            case 13:calcX=113;
-                    calcY=463;
-                    break;
-            case 14:calcX=183;
-                    calcY=463;
-                    break;
-            case 15:calcX=253;
-                    calcY=463;
-                    break;
-            case 16:calcX=43;
-                    calcY=393;
-                    break;
-            case 17:calcX=113;
-                    calcY=393;
-                    break;
-            case 18:calcX=183;
-                    calcY=393;
-                    break;
-            case 19:calcX=253;
-                    calcY=393;
-                    break;
-            case 20:calcX=43;
-                    calcY=323;
-                    break;
-            case 21:calcX=113;
-                    calcY=323;
-                    break;
-            case 22:calcX=183;
-                    calcY=323;
-                    break;
-            case 23:calcX=253;
-                    calcY=323;
-                    break;
-            case 24:calcX=43;
-                    calcY=253;
-                    break;
-            case 25:calcX=113;
-                    calcY=253;
-                    break;
-            case 26:calcX=183;
-                    calcY=253;
-                    break;
-            case 27:calcX=253;
-                    calcY=253;
-                    break;
-            case 28:calcX=43;
-                    calcY=183;
-                    break;
-            case 29:calcX=113;
-                    calcY=183;
-                    break;
-            case 30:calcX=183;
-                    calcY=183;
-                    break;
-            case 31:calcX=253;
-                    calcY=183;
-                    break;
-            case 32:calcX=43;
-                    calcY=113;
-                    break;
-            case 33:calcX=113;
-                    calcY=113;
-                    break;
-            case 34:calcX=183;
-                    calcY=113;
-                    break;
-            case 35:calcX=253;
-                    calcY=113;
-                    break;
-            case 36:calcX=43;
-                    calcY=43;
-                    break;
-            case 37:calcX=113;
-                    calcY=43;
-                    break;
-            case 38:calcX=183;
-                    calcY=43;
-                    break;
-            case 39:calcX=253;
-                    calcY=43;
-                    break;
-                    
+
+    public void getColorXY(int colorBW) {
+        int calcX = -100;
+        int calcY = -100;
+        switch (countCircles()) {
+            case 0:
+                calcX = 43;
+                calcY = 673;
+                break;
+            case 1:
+                calcX = 113;
+                calcY = 673;
+                break;
+            case 2:
+                calcX = 183;
+                calcY = 673;
+                break;
+            case 3:
+                calcX = 253;
+                calcY = 673;
+                break;
+            case 4:
+                calcX = 43;
+                calcY = 603;
+                break;
+            case 5:
+                calcX = 113;
+                calcY = 603;
+                break;
+            case 6:
+                calcX = 183;
+                calcY = 603;
+                break;
+            case 7:
+                calcX = 253;
+                calcY = 603;
+                break;
+            case 8:
+                calcX = 43;
+                calcY = 533;
+                break;
+            case 9:
+                calcX = 113;
+                calcY = 533;
+                break;
+            case 10:
+                calcX = 183;
+                calcY = 533;
+                break;
+            case 11:
+                calcX = 253;
+                calcY = 533;
+                break;
+            case 12:
+                calcX = 43;
+                calcY = 463;
+                break;
+            case 13:
+                calcX = 113;
+                calcY = 463;
+                break;
+            case 14:
+                calcX = 183;
+                calcY = 463;
+                break;
+            case 15:
+                calcX = 253;
+                calcY = 463;
+                break;
+            case 16:
+                calcX = 43;
+                calcY = 393;
+                break;
+            case 17:
+                calcX = 113;
+                calcY = 393;
+                break;
+            case 18:
+                calcX = 183;
+                calcY = 393;
+                break;
+            case 19:
+                calcX = 253;
+                calcY = 393;
+                break;
+            case 20:
+                calcX = 43;
+                calcY = 323;
+                break;
+            case 21:
+                calcX = 113;
+                calcY = 323;
+                break;
+            case 22:
+                calcX = 183;
+                calcY = 323;
+                break;
+            case 23:
+                calcX = 253;
+                calcY = 323;
+                break;
+            case 24:
+                calcX = 43;
+                calcY = 253;
+                break;
+            case 25:
+                calcX = 113;
+                calcY = 253;
+                break;
+            case 26:
+                calcX = 183;
+                calcY = 253;
+                break;
+            case 27:
+                calcX = 253;
+                calcY = 253;
+                break;
+            case 28:
+                calcX = 43;
+                calcY = 183;
+                break;
+            case 29:
+                calcX = 113;
+                calcY = 183;
+                break;
+            case 30:
+                calcX = 183;
+                calcY = 183;
+                break;
+            case 31:
+                calcX = 253;
+                calcY = 183;
+                break;
+            case 32:
+                calcX = 43;
+                calcY = 113;
+                break;
+            case 33:
+                calcX = 113;
+                calcY = 113;
+                break;
+            case 34:
+                calcX = 183;
+                calcY = 113;
+                break;
+            case 35:
+                calcX = 253;
+                calcY = 113;
+                break;
+            case 36:
+                calcX = 43;
+                calcY = 43;
+                break;
+            case 37:
+                calcX = 113;
+                calcY = 43;
+                break;
+            case 38:
+                calcX = 183;
+                calcY = 43;
+                break;
+            case 39:
+                calcX = 253;
+                calcY = 43;
+                break;
+
         }
         paintCircle(calcX, calcY, colorBW);
     }
-    
-    public void getPinsXY(){
-        
+
+    public void getPinsXY() {
+
     }
-    
+
     int circles = -1;
-    int countCircles(){
+
+    int countCircles() {
         circles++;
         return circles;
     }
-    
+
+    public void eval() {
+
+    }
+
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
@@ -370,25 +421,25 @@ public class MastermindUI extends javax.swing.JFrame {
             cs[i1] = 1 + (int) (Math.random() * 6);
         }
         System.out.println(Arrays.toString(cs));
-        
+
         int whitePin[] = new int[10];
         int blackPin[] = new int[10];
-        
-        for (int t1 = 0; t1 < 10; t1++){
-            for (int t2 = 0; t2 < 4; t2++){
+
+        for (int t1 = 0; t1 < 10; t1++) {
+            for (int t2 = 0; t2 < 4; t2++) {
                 cg[t2][t1] = 1 + (int) (Math.random() * 6);
             }
         }
-        
-        for (int i2 = 0; i2 < 10; i2++){
-            for (int i3 = 0; i3 < 4; i3++){
-                for (int i4 = 0; i4 < 4; i4++){
-                    if (cg[i4][i2] == cs[i3]){
+
+        for (int i2 = 0; i2 < 10; i2++) {
+            for (int i3 = 0; i3 < 4; i3++) {
+                for (int i4 = 0; i4 < 4; i4++) {
+                    if (cg[i4][i2] == cs[i3]) {
                         whitePin[i2]++;
                         System.out.println(Arrays.toString(whitePin));
                     }
                 }
-                if (cg[i3][i2] == cs[i3]){
+                if (cg[i3][i2] == cs[i3]) {
                     blackPin[i2]++;
                     System.out.println(Arrays.toString(blackPin));
                 }
