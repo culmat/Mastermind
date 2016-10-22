@@ -197,7 +197,7 @@ public class MastermindUI extends javax.swing.JFrame {
                     break;
         }
             
-        g.fillOval(x, y, 48, 48); //to be adjusted
+        g.fillOval(x, y, 45, 45); //to be adjusted
     }
     
     public void paintPins(int x, int y, int ColorBW){
@@ -214,15 +214,130 @@ public class MastermindUI extends javax.swing.JFrame {
     }
     
     public void getColorXY(int colorBW){
-        int calcX=0;
-        int calcY=0;
+        int calcX=-100;
+        int calcY=-100;
         switch (countCircles()){
-            case 0: calcX=100;
-                    calcY=100;
+            case 0: calcX=43;
+                    calcY=673;
                     break;
-            case 1: calcX=20;
-                    calcY=20;
+            case 1: calcX=113;
+                    calcY=673;
                     break;
+            case 2: calcX=183;
+                    calcY=673;
+                    break;
+            case 3: calcX=253;
+                    calcY=673;
+                    break;
+            case 4: calcX=43;
+                    calcY=603;
+                    break;
+            case 5: calcX=113;
+                    calcY=603;
+                    break;
+            case 6: calcX=183;
+                    calcY=603;
+                    break;
+            case 7: calcX=253;
+                    calcY=603;
+                    break;
+            case 8: calcX=43;
+                    calcY=533;
+                    break;
+            case 9: calcX=113;
+                    calcY=533;
+                    break;
+            case 10:calcX=183;
+                    calcY=533;
+                    break;
+            case 11:calcX=253;
+                    calcY=533;
+                    break;
+            case 12:calcX=43;
+                    calcY=463;
+                    break;
+            case 13:calcX=113;
+                    calcY=463;
+                    break;
+            case 14:calcX=183;
+                    calcY=463;
+                    break;
+            case 15:calcX=253;
+                    calcY=463;
+                    break;
+            case 16:calcX=43;
+                    calcY=393;
+                    break;
+            case 17:calcX=113;
+                    calcY=393;
+                    break;
+            case 18:calcX=183;
+                    calcY=393;
+                    break;
+            case 19:calcX=253;
+                    calcY=393;
+                    break;
+            case 20:calcX=43;
+                    calcY=323;
+                    break;
+            case 21:calcX=113;
+                    calcY=323;
+                    break;
+            case 22:calcX=183;
+                    calcY=323;
+                    break;
+            case 23:calcX=253;
+                    calcY=323;
+                    break;
+            case 24:calcX=43;
+                    calcY=253;
+                    break;
+            case 25:calcX=113;
+                    calcY=253;
+                    break;
+            case 26:calcX=183;
+                    calcY=253;
+                    break;
+            case 27:calcX=253;
+                    calcY=253;
+                    break;
+            case 28:calcX=43;
+                    calcY=183;
+                    break;
+            case 29:calcX=113;
+                    calcY=183;
+                    break;
+            case 30:calcX=183;
+                    calcY=183;
+                    break;
+            case 31:calcX=253;
+                    calcY=183;
+                    break;
+            case 32:calcX=43;
+                    calcY=113;
+                    break;
+            case 33:calcX=113;
+                    calcY=113;
+                    break;
+            case 34:calcX=183;
+                    calcY=113;
+                    break;
+            case 35:calcX=253;
+                    calcY=113;
+                    break;
+            case 36:calcX=43;
+                    calcY=43;
+                    break;
+            case 37:calcX=113;
+                    calcY=43;
+                    break;
+            case 38:calcX=183;
+                    calcY=43;
+                    break;
+            case 39:calcX=253;
+                    calcY=43;
+                    break;
+                    
         }
         paintCircle(calcX, calcY, colorBW);
     }
