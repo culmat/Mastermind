@@ -211,8 +211,10 @@ public class MastermindUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Antialiasing (Kantenglättung) für gezeichnete Formen
     RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
+    //Methode zum Zeichnen der Kreise, nimmt Koordinaten aus getColorXY() und Farbe von entsprechendem Button
     public void paintCircle(int x, int y, int ColorInt) {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         g.setRenderingHints(hints);
@@ -239,27 +241,27 @@ public class MastermindUI extends javax.swing.JFrame {
         g.fillOval(x, y, 45, 45);
     }
 
+    //Metode zum Zeichen der Pins, nimmt Koordinaten aus getPinsXY() und Farbe vaus Auswertung von eval()
     public void paintPins(int x, int y, int ColorBW) {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         g.setRenderingHints(hints);
         g.setColor(Color.black);
         switch (ColorBW) {
-            case 0:
+            case 0: //schwarzer Pin
                 g.fillOval(x, y, 20, 20);
                 break;
-            case 1:
+            case 1: //weisser Pin
                 g.setColor(Color.white);
                 g.fillOval(x, y, 20, 20);
                 g.setColor(Color.black);
                 g.drawOval(x, y, 20, 20);
                 break;
         }
-        //g.fillOval(x, y, 20, 20);
     }
 
+    //Methode zur Übergabe der Koordinaten für Kreise an paintCircle(), ruft entsprechenden Kreis mittels Zählmethode countCircles() auf, zeichnet kleine schwarze Kreise als Hinweis auf nächstes Feld und reuft Überprufung mittels eval() auf
     public void getColorXY(int color) {
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
-        RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHints(hints);
         g.setColor(Color.black);
         int calcX = -100;
@@ -518,6 +520,7 @@ public class MastermindUI extends javax.swing.JFrame {
         paintCircle(calcX, calcY, color);
     }
 
+    //Methode zur Übergabe der Koordinaten für Pins an paintPins(), ruft Anzahl Pins aus eval() auf
     public void getPinsXY(int row) {
         int calcX = 350;
         int calcY = -100;
@@ -534,9 +537,11 @@ public class MastermindUI extends javax.swing.JFrame {
         }
     }
 
+    //globale Arrays für Koorektur-Pins
     int whitePin[] = new int[10];
     int blackPin[] = new int[10];
 
+    //Methode zur Überprufung der eingebenen Farben, berehcnet Anzahl schwarze und weisse Pins
     public void eval(int row) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -573,16 +578,19 @@ public class MastermindUI extends javax.swing.JFrame {
         System.out.println("black " + Arrays.toString(blackPin));
         System.out.println("white " + Arrays.toString(whitePin));
         getPinsXY(row);
+        //Ausnahmefall falls alle Farben korrekt, Spieler hat gewonnen
         if (blackPin[row] == 4) {
             Title.setText("Congratulations, you have won!");
             showSolution();
         }
     }
 
+    //globale Zählvariable für Position der Kreise
     int circles = -1;
-
+    //Zählmethode der gesetzten Kreise, Weitergabe an getColorXY()
     int countCircles() {
         circles++;
+        //Ausnahme falls keine Felder mehr übrig, Spieler hat verloren
         if (circles == 39) {
             Title.setText("You have lost, click on button to start a new game.");
             showSolution();
@@ -590,6 +598,7 @@ public class MastermindUI extends javax.swing.JFrame {
         return circles;
     }
 
+    //Methode zum Anzeigen der korrekten Lösung, falls Spieler gewonnen hat, verloren hat oder aufgegeben hat
     public void showSolution() {
         Graphics2D g = (Graphics2D) solutionFrame.getGraphics();
         g.setRenderingHints(hints);
@@ -624,10 +633,12 @@ public class MastermindUI extends javax.swing.JFrame {
         Button6.setEnabled(false);
     }
 
-    int cg[][] = new int[4][10];                                            //Player Color Array
-    int ct[][] = new int[4][10];
-    int cs[] = new int[4];                                                  //Solution Color Array
+    //globales Array für Eingaben des Spielers
+    int cg[][] = new int[4][10];
+    //globales Array für korrekte Lösung
+    int cs[] = new int[4];
 
+    //Startbutton räumt vorheriges Spielfeld auf, zeichnet neues Spielfeld und berechnet neue Lösung
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         Title.setText("Mastermind by Robin Bonny");
         for (int a = 0; a < 4; a++) {
@@ -672,30 +683,37 @@ public class MastermindUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_StartButtonMouseClicked
 
+    //Button rot
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
         getColorXY(0);
     }//GEN-LAST:event_Button1ActionPerformed
 
+    //Button grün
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
         getColorXY(1);
     }//GEN-LAST:event_Button2ActionPerformed
 
+    //Button blau
     private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
         getColorXY(2);
     }//GEN-LAST:event_Button3ActionPerformed
 
+    //Button orange
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
         getColorXY(3);
     }//GEN-LAST:event_Button4ActionPerformed
 
+    //Button cyan
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
         getColorXY(4);
     }//GEN-LAST:event_Button5ActionPerformed
 
+    //Button magenta
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
         getColorXY(5);
     }//GEN-LAST:event_Button6ActionPerformed
 
+    //Lösung anzeigen
     private void solveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButtonActionPerformed
         Title.setText("You have lost, click on button to start a new game.");
         showSolution();
