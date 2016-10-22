@@ -436,8 +436,8 @@ public class MastermindUI extends javax.swing.JFrame {
         paintCircle(calcX, calcY, color);
     }
 
-    public void getPinsXY() {
-
+    public void getPinsXY(int row) {
+        
     }
 
     int whitePin[] = new int[10];
@@ -458,6 +458,7 @@ public class MastermindUI extends javax.swing.JFrame {
         }
         System.out.println("black " + Arrays.toString(blackPin));
         System.out.println("white " + Arrays.toString(whitePin));
+        getPinsXY(row);
     }
 
     int circles = -1;
@@ -487,29 +488,6 @@ public class MastermindUI extends javax.swing.JFrame {
             cs[i] = (int) (Math.random() * 6);
         }
         System.out.println(Arrays.toString(cs));
-
-        //int whitePin[] = new int[10];
-        //int blackPin[] = new int[10];
-        /*for (int t1 = 0; t1 < 10; t1++) {
-            for (int t2 = 0; t2 < 4; t2++) {
-                cg[t2][t1] = 1 + (int) (Math.random() * 6);
-            }
-        }*/
-
- /*for (int i2 = 0; i2 < 10; i2++) {
-            for (int i3 = 0; i3 < 4; i3++) {
-                for (int i4 = 0; i4 < 4; i4++) {
-                    if (cg[i4][i2] == cs[i3]) {
-                        whitePin[i2]++;
-                        System.out.println(Arrays.toString(whitePin));
-                    }
-                }
-                if (cg[i3][i2] == cs[i3]) {
-                    blackPin[i2]++;
-                    System.out.println(Arrays.toString(blackPin));
-                }
-            }
-        }*/
     }//GEN-LAST:event_StartButtonMouseClicked
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
