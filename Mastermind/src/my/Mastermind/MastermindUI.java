@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package my.Mastermind;
 
 import java.awt.*;
@@ -10,9 +5,9 @@ import java.util.Arrays;
 import javax.swing.*;
 
 /**
- *
  * @author Robin Bonny
  */
+
 public class MastermindUI extends javax.swing.JFrame {
 
     public MastermindUI() {
@@ -220,6 +215,10 @@ public class MastermindUI extends javax.swing.JFrame {
     }
 
     public void getColorXY(int color) {
+        Graphics2D g = (Graphics2D) GFrame.getGraphics();
+        RenderingHints hints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setRenderingHints(hints);
+        g.setColor(Color.black);
         int calcX = -100;
         int calcY = -100;
         switch (countCircles()) {
@@ -227,205 +226,244 @@ public class MastermindUI extends javax.swing.JFrame {
                 cg[0][0] = color;
                 calcX = 43;
                 calcY = 673;
+                g.fillOval(130, 690, 10, 10);
                 break;
             case 1:
                 cg[1][0] = color;
                 calcX = 113;
                 calcY = 673;
+                g.fillOval(200, 690, 10, 10);
                 break;
             case 2:
                 cg[2][0] = color;
                 calcX = 183;
                 calcY = 673;
+                g.fillOval(270, 690, 10, 10);
                 break;
             case 3:
                 cg[3][0] = color;
                 calcX = 253;
                 calcY = 673;
+                g.fillOval(60, 620, 10, 10);
                 eval(0);
                 break;
             case 4:
                 cg[0][1] = color;
                 calcX = 43;
                 calcY = 603;
+                g.fillOval(130, 620, 10, 10);
                 break;
             case 5:
                 cg[1][1] = color;
                 calcX = 113;
                 calcY = 603;
+                g.fillOval(200, 620, 10, 10);
                 break;
             case 6:
                 cg[2][1] = color;
                 calcX = 183;
                 calcY = 603;
+                g.fillOval(270, 620, 10, 10);
                 break;
             case 7:
                 cg[3][1] = color;
                 calcX = 253;
                 calcY = 603;
+                g.fillOval(60, 550, 10, 10);
                 eval(1);
                 break;
             case 8:
                 cg[0][2] = color;
                 calcX = 43;
                 calcY = 533;
+                g.fillOval(130, 550, 10, 10);
                 break;
             case 9:
                 cg[1][2] = color;
                 calcX = 113;
                 calcY = 533;
+                g.fillOval(200, 550, 10, 10);
                 break;
             case 10:
                 cg[2][2] = color;
                 calcX = 183;
                 calcY = 533;
+                g.fillOval(270, 550, 10, 10);
                 break;
             case 11:
                 cg[3][2] = color;
                 calcX = 253;
                 calcY = 533;
+                g.fillOval(60, 480, 10, 10);
                 eval(2);
                 break;
             case 12:
                 cg[0][3] = color;
                 calcX = 43;
                 calcY = 463;
+                g.fillOval(130, 480, 10, 10);
                 break;
             case 13:
                 cg[1][3] = color;
                 calcX = 113;
                 calcY = 463;
+                g.fillOval(200, 480, 10, 10);
                 break;
             case 14:
                 cg[2][3] = color;
                 calcX = 183;
                 calcY = 463;
+                g.fillOval(270, 480, 10, 10);
                 break;
             case 15:
                 cg[3][3] = color;
                 calcX = 253;
                 calcY = 463;
+                g.fillOval(60, 410, 10, 10);
                 eval(3);
                 break;
             case 16:
                 cg[0][4] = color;
                 calcX = 43;
                 calcY = 393;
+                g.fillOval(130, 410, 10, 10);
                 break;
             case 17:
                 cg[1][4] = color;
                 calcX = 113;
                 calcY = 393;
+                g.fillOval(200, 410, 10, 10);
                 break;
             case 18:
                 cg[2][4] = color;
                 calcX = 183;
                 calcY = 393;
+                g.fillOval(270, 410, 10, 10);
                 break;
             case 19:
                 cg[3][4] = color;
                 calcX = 253;
                 calcY = 393;
+                g.fillOval(60, 340, 10, 10);
                 eval(4);
                 break;
             case 20:
                 cg[0][5] = color;
                 calcX = 43;
                 calcY = 323;
+                g.fillOval(130, 340, 10, 10);
                 break;
             case 21:
                 cg[1][5] = color;
                 calcX = 113;
                 calcY = 323;
+                g.fillOval(200, 340, 10, 10);
                 break;
             case 22:
                 cg[2][5] = color;
                 calcX = 183;
                 calcY = 323;
+                g.fillOval(270, 340, 10, 10);
                 break;
             case 23:
                 cg[3][5] = color;
                 calcX = 253;
                 calcY = 323;
+                g.fillOval(60, 270, 10, 10);
                 eval(5);
                 break;
             case 24:
                 cg[0][6] = color;
                 calcX = 43;
                 calcY = 253;
+                g.fillOval(130, 270, 10, 10);
                 break;
             case 25:
                 cg[1][6] = color;
                 calcX = 113;
                 calcY = 253;
+                g.fillOval(200, 270, 10, 10);
                 break;
             case 26:
                 cg[2][6] = color;
                 calcX = 183;
                 calcY = 253;
+                g.fillOval(270, 270, 10, 10);
                 break;
             case 27:
                 cg[3][6] = color;
                 calcX = 253;
                 calcY = 253;
+                g.fillOval(60, 200, 10, 10);
                 eval(6);
                 break;
             case 28:
                 cg[0][7] = color;
                 calcX = 43;
                 calcY = 183;
+                g.fillOval(130, 200, 10, 10);
                 break;
             case 29:
                 cg[1][7] = color;
                 calcX = 113;
                 calcY = 183;
+                g.fillOval(200, 200, 10, 10);
                 break;
             case 30:
                 cg[2][7] = color;
                 calcX = 183;
                 calcY = 183;
+                g.fillOval(270, 200, 10, 10);
                 break;
             case 31:
                 cg[3][7] = color;
                 calcX = 253;
                 calcY = 183;
+                g.fillOval(60, 130, 10, 10);
                 eval(7);
                 break;
             case 32:
                 cg[0][8] = color;
                 calcX = 43;
                 calcY = 113;
+                g.fillOval(130, 130, 10, 10);
                 break;
             case 33:
                 cg[1][8] = color;
                 calcX = 113;
                 calcY = 113;
+                g.fillOval(200, 130, 10, 10);
                 break;
             case 34:
                 cg[2][8] = color;
                 calcX = 183;
                 calcY = 113;
+                g.fillOval(270, 130, 10, 10);
                 break;
             case 35:
                 cg[3][8] = color;
                 calcX = 253;
                 calcY = 113;
+                g.fillOval(60, 60, 10, 10);
                 eval(8);
                 break;
             case 36:
                 cg[0][9] = color;
                 calcX = 43;
                 calcY = 43;
+                g.fillOval(130, 60, 10, 10);
                 break;
             case 37:
                 cg[1][9] = color;
                 calcX = 113;
                 calcY = 43;
+                g.fillOval(200, 60, 10, 10);
                 break;
             case 38:
                 cg[2][9] = color;
                 calcX = 183;
                 calcY = 43;
+                g.fillOval(270, 60, 10, 10);
                 break;
             case 39:
                 cg[3][9] = color;
