@@ -197,7 +197,7 @@ public class MastermindUI extends javax.swing.JFrame {
                     break;
         }
             
-        g.fillOval(x, y, 50, 50); //to be adjusted
+        g.fillOval(x, y, 48, 48); //to be adjusted
     }
     
     public void paintPins(int x, int y, int ColorBW){
@@ -213,8 +213,18 @@ public class MastermindUI extends javax.swing.JFrame {
         g.fillOval(x, y, 20, 20); //to be adjusted
     }
     
-    public void getColorXY(){
-        
+    public void getColorXY(int colorBW){
+        int calcX=0;
+        int calcY=0;
+        switch (countCircles()){
+            case 0: calcX=100;
+                    calcY=100;
+                    break;
+            case 1: calcX=20;
+                    calcY=20;
+                    break;
+        }
+        paintCircle(calcX, calcY, colorBW);
     }
     
     public void getPinsXY(){
@@ -275,34 +285,27 @@ public class MastermindUI extends javax.swing.JFrame {
     }//GEN-LAST:event_StartButtonMouseClicked
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
-        getColorXY();
-        countCircles();
-        paintCircle(100,150,0);
+        getColorXY(0);
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
-        countCircles();
-        paintCircle(100,150,1);
+        getColorXY(1);
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
-        countCircles();
-        paintCircle(100,150,2);
+        getColorXY(2);
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
-        countCircles();
-        paintCircle(100,150,3);
+        getColorXY(3);
     }//GEN-LAST:event_Button4ActionPerformed
 
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
-        countCircles();
-        paintCircle(100,150,4);
+        getColorXY(4);
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
-        countCircles();
-        paintCircle(100,150,5);
+        getColorXY(5);
     }//GEN-LAST:event_Button6ActionPerformed
 
     /**
