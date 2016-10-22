@@ -440,13 +440,16 @@ public class MastermindUI extends javax.swing.JFrame {
 
     }
 
+    int whitePin[] = new int[10];
+    int blackPin[] = new int[10];
+
     public void eval(int row) {
-        int whitePin[] = new int[10];
-        int blackPin[] = new int[10];
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if (cg[j][row] == cs[i]) {
-                    whitePin[row]++;
+                if (i != j) {
+                    if (cg[j][row] == cs[i]) {
+                        whitePin[row]++;
+                    }
                 }
             }
             if (cg[i][row] == cs[i]) {
