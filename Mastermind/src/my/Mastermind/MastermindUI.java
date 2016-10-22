@@ -22,7 +22,6 @@ public class MastermindUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
         GFrame = new javax.swing.JPanel();
         StartButton = new javax.swing.JButton();
@@ -34,31 +33,19 @@ public class MastermindUI extends javax.swing.JFrame {
         Button2 = new javax.swing.JButton();
         Button3 = new javax.swing.JButton();
         Button4 = new javax.swing.JButton();
-        undoButton = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Java Mastermind by Robin Bonny");
         setResizable(false);
 
-        Title.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Title.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         Title.setText("Mastermind by Robin Bonny");
 
         javax.swing.GroupLayout GFrameLayout = new javax.swing.GroupLayout(GFrame);
         GFrame.setLayout(GFrameLayout);
         GFrameLayout.setHorizontalGroup(
             GFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 462, Short.MAX_VALUE)
+            .addGap(0, 515, Short.MAX_VALUE)
         );
         GFrameLayout.setVerticalGroup(
             GFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,49 +152,36 @@ public class MastermindUI extends javax.swing.JFrame {
             }
         });
 
-        undoButton.setText("Undo");
-        undoButton.setEnabled(false);
-        undoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                undoButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(GFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(undoButton)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
-                            .addComponent(solutionFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(StartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(solveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(solutionFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(StartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(solveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(GFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(51, 51, 51)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,8 +204,7 @@ public class MastermindUI extends javax.swing.JFrame {
                     .addComponent(Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(undoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
 
@@ -275,6 +248,9 @@ public class MastermindUI extends javax.swing.JFrame {
                 g.fillOval(x, y, 20, 20);
                 break;
             case 1:
+                g.setColor(Color.white);
+                g.fillOval(x, y, 20, 20);
+                g.setColor(Color.black);
                 g.drawOval(x, y, 20, 20);
                 break;
         }
@@ -564,7 +540,7 @@ public class MastermindUI extends javax.swing.JFrame {
     public void eval(int row) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if (i != j) {
+                if (i != j && cg[0][row] != cg[1][row] && cg[1][row] != cg[2][row] && cg[2][row] != cg[3][row]) {
                     if (cg[j][row] == cs[i]) {
                         whitePin[row]++;
                     }
@@ -574,18 +550,32 @@ public class MastermindUI extends javax.swing.JFrame {
                 blackPin[row]++;
             }
         }
+        /*ct = cg;
+        for (int k = 0; k < 4; k++) {
+            if (ct[0][row] == cs[k] && k != 0) {
+                whitePin[row]++;
+                ct[0][row] = 10;
+            }
+            if (ct[1][row] == cs[k] && k != 1) {
+                whitePin[row]++;
+                ct[1][row] = 10;
+            }
+            if (ct[2][row] == cs[k] && k != 2) {
+                whitePin[row]++;
+                ct[2][row] = 10;
+            }
+            if (ct[3][row] == cs[k] && k != 3) {
+                whitePin[row]++;
+                ct[3][row] = 10;
+            }
+
+        }*/
         System.out.println("black " + Arrays.toString(blackPin));
         System.out.println("white " + Arrays.toString(whitePin));
         getPinsXY(row);
         if (blackPin[row] == 4) {
             Title.setText("Congratulations, you have won!");
-            Button1.setEnabled(false);
-            Button2.setEnabled(false);
-            Button3.setEnabled(false);
-            Button4.setEnabled(false);
-            Button5.setEnabled(false);
-            Button6.setEnabled(false);
-            undoButton.setEnabled(false);
+            showSolution();
         }
     }
 
@@ -593,10 +583,49 @@ public class MastermindUI extends javax.swing.JFrame {
 
     int countCircles() {
         circles++;
+        if (circles == 39) {
+            Title.setText("You have lost, click on button to start a new game.");
+            showSolution();
+        }
         return circles;
     }
 
+    public void showSolution() {
+        Graphics2D g = (Graphics2D) solutionFrame.getGraphics();
+        g.setRenderingHints(hints);
+        for (int i = 0; i < 4; i++) {
+            switch (cs[i]) {
+                case 0:
+                    g.setColor(Color.red);
+                    break;
+                case 1:
+                    g.setColor(Color.green);
+                    break;
+                case 2:
+                    g.setColor(Color.blue);
+                    break;
+                case 3:
+                    g.setColor(Color.orange);
+                    break;
+                case 4:
+                    g.setColor(Color.cyan);
+                    break;
+                case 5:
+                    g.setColor(Color.magenta);
+                    break;
+            }
+            g.fillOval(i * 70 + 43, 6, 44, 44);
+        }
+        Button1.setEnabled(false);
+        Button2.setEnabled(false);
+        Button3.setEnabled(false);
+        Button4.setEnabled(false);
+        Button5.setEnabled(false);
+        Button6.setEnabled(false);
+    }
+
     int cg[][] = new int[4][10];                                            //Player Color Array
+    int ct[][] = new int[4][10];
     int cs[] = new int[4];                                                  //Solution Color Array
 
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
@@ -607,6 +636,10 @@ public class MastermindUI extends javax.swing.JFrame {
             }
             cs[a] = 0;
         }
+        for (int b = 0; b < 10; b++) {
+            blackPin[b] = 0;
+            whitePin[b] = 0;
+        }
         circles = -1;
         Button1.setEnabled(true);
         Button2.setEnabled(true);
@@ -614,11 +647,10 @@ public class MastermindUI extends javax.swing.JFrame {
         Button4.setEnabled(true);
         Button5.setEnabled(true);
         Button6.setEnabled(true);
-        undoButton.setEnabled(true);
 
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         g.setRenderingHints(hints);
-        g.clearRect(0, 0, 500, 760);
+        g.clearRect(0, 0, 5000, 5000);
         g.drawRect(20, 20, 300, 720);
         for (int v = 0; v < 4; v++) {
             for (int h = 0; h < 10; h++) {
@@ -665,44 +697,9 @@ public class MastermindUI extends javax.swing.JFrame {
     }//GEN-LAST:event_Button6ActionPerformed
 
     private void solveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButtonActionPerformed
-        Graphics2D g = (Graphics2D) solutionFrame.getGraphics();
-        g.setRenderingHints(hints);
-        for (int i = 0; i < 4; i++) {
-            switch (cs[i]) {
-                case 0:
-                    g.setColor(Color.red);
-                    break;
-                case 1:
-                    g.setColor(Color.green);
-                    break;
-                case 2:
-                    g.setColor(Color.blue);
-                    break;
-                case 3:
-                    g.setColor(Color.orange);
-                    break;
-                case 4:
-                    g.setColor(Color.cyan);
-                    break;
-                case 5:
-                    g.setColor(Color.magenta);
-                    break;
-            }
-            g.fillOval(i * 70 + 43, 6, 44, 44);
-        }
         Title.setText("You have lost, click on button to start a new game.");
-        Button1.setEnabled(false);
-        Button2.setEnabled(false);
-        Button3.setEnabled(false);
-        Button4.setEnabled(false);
-        Button5.setEnabled(false);
-        Button6.setEnabled(false);
-        undoButton.setEnabled(false);
+        showSolution();
     }//GEN-LAST:event_solveButtonActionPerformed
-
-    private void undoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_undoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -749,9 +746,7 @@ public class MastermindUI extends javax.swing.JFrame {
     private javax.swing.JPanel GFrame;
     private javax.swing.JButton StartButton;
     private javax.swing.JLabel Title;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel solutionFrame;
     private javax.swing.JButton solveButton;
-    private javax.swing.JButton undoButton;
     // End of variables declaration//GEN-END:variables
 }
