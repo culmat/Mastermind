@@ -1,6 +1,7 @@
 package my.Mastermind;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.*;
 
@@ -544,37 +545,30 @@ public class MastermindUI extends javax.swing.JFrame {
     //Methode zur Überprufung der eingebenen Farben, berehcnet Anzahl schwarze und weisse Pins
     public void eval(int row) {
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+            /*for (int j = 0; j < 4; j++) {
                 if (i != j && cg[0][row] != cg[1][row] && cg[1][row] != cg[2][row] && cg[2][row] != cg[3][row]) {
                     if (cg[j][row] == cs[i]) {
                         whitePin[row]++;
                     }
                 }
-            }
+            }*/
             if (cg[i][row] == cs[i]) {
                 blackPin[row]++;
             }
         }
-        /*ct = cg;
-        for (int k = 0; k < 4; k++) {
-            if (ct[0][row] == cs[k] && k != 0) {
-                whitePin[row]++;
-                ct[0][row] = 10;
-            }
-            if (ct[1][row] == cs[k] && k != 1) {
-                whitePin[row]++;
-                ct[1][row] = 10;
-            }
-            if (ct[2][row] == cs[k] && k != 2) {
-                whitePin[row]++;
-                ct[2][row] = 10;
-            }
-            if (ct[3][row] == cs[k] && k != 3) {
-                whitePin[row]++;
-                ct[3][row] = 10;
-            }
 
-        }*/
+        ArrayList<Integer> alreadyProcessed = new ArrayList<Integer>();
+        for (int color : cs) {
+            for (int j = 0; j < 4; j++) {
+                if (color == cg[j][row] && !alreadyProcessed.contains(j)) {
+                    alreadyProcessed.add(j);
+                    whitePin[row]++;
+                    break;
+                }
+            }
+        }
+        whitePin[row] -= blackPin[row];
+
         System.out.println("black " + Arrays.toString(blackPin));
         System.out.println("white " + Arrays.toString(whitePin));
         getPinsXY(row);
@@ -587,6 +581,7 @@ public class MastermindUI extends javax.swing.JFrame {
 
     //globale Zählvariable für Position der Kreise
     int circles = -1;
+
     //Zählmethode der gesetzten Kreise, Weitergabe an getColorXY()
     int countCircles() {
         circles++;
@@ -631,6 +626,7 @@ public class MastermindUI extends javax.swing.JFrame {
         Button4.setEnabled(false);
         Button5.setEnabled(false);
         Button6.setEnabled(false);
+        solveButton.setEnabled(false);
     }
 
     //globales Array für Eingaben des Spielers
@@ -658,6 +654,7 @@ public class MastermindUI extends javax.swing.JFrame {
         Button4.setEnabled(true);
         Button5.setEnabled(true);
         Button6.setEnabled(true);
+        solveButton.setEnabled(true);
 
         Graphics2D g = (Graphics2D) GFrame.getGraphics();
         g.setRenderingHints(hints);
