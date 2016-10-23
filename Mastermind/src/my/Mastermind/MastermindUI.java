@@ -538,20 +538,13 @@ public class MastermindUI extends javax.swing.JFrame {
         }
     }
 
-    //globale Arrays für Koorektur-Pins
+    //globale Arrays für Korrektur-Pins
     int whitePin[] = new int[10];
     int blackPin[] = new int[10];
 
-    //Methode zur Überprufung der eingebenen Farben, berehcnet Anzahl schwarze und weisse Pins
+    //Methode zur Überprufung der eingebenen Farben, berechnet Anzahl schwarze und weisse Pins
     public void eval(int row) {
         for (int i = 0; i < 4; i++) {
-            /*for (int j = 0; j < 4; j++) {
-                if (i != j && cg[0][row] != cg[1][row] && cg[1][row] != cg[2][row] && cg[2][row] != cg[3][row]) {
-                    if (cg[j][row] == cs[i]) {
-                        whitePin[row]++;
-                    }
-                }
-            }*/
             if (cg[i][row] == cs[i]) {
                 blackPin[row]++;
             }
@@ -634,7 +627,7 @@ public class MastermindUI extends javax.swing.JFrame {
     //globales Array für korrekte Lösung
     int cs[] = new int[4];
 
-    //Startbutton räumt vorheriges Spielfeld auf, zeichnet neues Spielfeld und berechnet neue Lösung
+    //Startbutton räumt vorheriges Spielfeld auf, zeichnet neues Spielfeld und berechnet neue Code
     private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
         Title.setText("Mastermind by Robin Bonny");
         for (int a = 0; a < 4; a++) {
